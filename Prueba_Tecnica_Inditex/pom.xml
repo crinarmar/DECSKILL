@@ -18,11 +18,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	
-	<groupId>com.W2M.service</groupId>
-	<artifactId>W2M-service</artifactId>
+	<groupId>com.inditex.service</groupId>
+	<artifactId>inditex-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>W2M-service</name>
-	<description>Application test for W2M</description>
+	<name>inditex-service</name>
+	<description>Application test for inditex</description>
 	
 	<properties>
 		<java.version>17</java.version>

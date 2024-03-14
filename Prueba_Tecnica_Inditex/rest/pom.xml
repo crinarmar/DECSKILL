@@ -4,13 +4,13 @@
 	
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.W2M.service</groupId>
-		<artifactId>W2M-service</artifactId>
+		<groupId>com.inditex.service</groupId>
+		<artifactId>inditex-service</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
   
-  	<artifactId>W2M-service-rest</artifactId>
-    <name>W2M-service-rest</name>
+  	<artifactId>inditex-service-rest</artifactId>
+    <name>inditex-service-rest</name>
     <description>Capa de infraestructura: API REST</description>
     
     <properties>
@@ -21,7 +21,7 @@
 	
 		<dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>W2M-service-domain</artifactId>
+            <artifactId>inditex-service-domain</artifactId>
             <version>${project.version}</version>
         </dependency>
         
@@ -63,8 +63,8 @@
 							<generateModelDocumentation>false</generateModelDocumentation>
 							<generateApiTests>true</generateApiTests>
 							<generateApiDocumentation>false</generateApiDocumentation>
- 							<apiPackage>com.W2M.service.rest.interfaces.spacecraft</apiPackage>
-                			<modelPackage>com.W2M.service.rest.interfaces.spacecraft.dto</modelPackage>                			
+ 							<apiPackage>com.inditex.service.rest.interfaces.spacecraft</apiPackage>
+                			<modelPackage>com.inditex.service.rest.interfaces.spacecraft.dto</modelPackage>                			
                 			<configOptions>
 								<useSpringBoot3>true</useSpringBoot3>
 								<booleanGetterPrefix>is</booleanGetterPrefix>

@@ -4,14 +4,14 @@
   
   	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.W2M.service</groupId>
-		<artifactId>W2M-service</artifactId>
+		<groupId>com.inditex.service</groupId>
+		<artifactId>inditex-service</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
    	
   
-  	<artifactId>W2M-service-jpa</artifactId>
-    <name>W2M-service-jpa</name>
+  	<artifactId>inditex-service-jpa</artifactId>
+    <name>inditex-service-jpa</name>
     <description>Capa de infraestructura: JPA</description>
     
 	<dependencies>
@@ -23,7 +23,7 @@
 	
     	<dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>W2M-service-domain</artifactId>
+            <artifactId>inditex-service-domain</artifactId>
             <version>${project.version}</version>
         </dependency>
         

@@ -1,142 +1,85 @@
 openapi: "3.0.0"
 info:
   version: 1.0.0
-  title: Dekra Swagger SpaceCraft
+  title: Inditex Swagger
   license:
     name: MIT
 servers:
   - url: http://localhost:8080/api/v1
 paths:
-  /naves:
+  /prices:
     get:
-      summary: List all spaceCraft
-      operationId: listSpaceCrafts
-      responses:
-        '200':
-          description: All SpaceCrafts
-          content:
-            application/json:    
-              schema:
-                $ref: "#/components/schemas/SpaceCraftCollectionRest"
-        'default':
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-    post:
-      summary: create a spaceCraft
-      operationId: createSpaceCraft
-      requestBody:
-        required: true
-        content:
-           application/json:
-              schema:
-                $ref: "#/components/schemas/SpaceCraftRest"
-      responses:
-        '201':
-          description: Created
-  /naves/{id}:
-    get:
-      summary: Find a specific spaceCraft
-      operationId: findSpaceCraftById
+      summary: Listar precios por filtro
+      operationId: listPricesByFilter
       parameters:
-        - name: id
-          in: path
-          description: unique spaceCraft identification
-          required: true
-          schema:
-           type: integer
-           format: int64
-      responses:
-        '200':
-          description: SpaceCraft selected
-          content:
-            application/json:    
-              schema:
-                $ref: "#/components/schemas/SpaceCraftRest"
-        default:
-          description: unexpected error
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/Error"
-    put:
-      summary: update a exist spaceCraft
-      operationId: updateSpaceCraft
-      parameters:
-        - name: id
-          in: path
-          description: unique spaceCraft identification
-          required: true
-          schema:
-           type: integer
-           format: int64
-      requestBody:
-        required: true
-        content:
-           application/json:
-              schema:
-                $ref: "#/components/schemas/SpaceCraftRest"
-      responses:
-        '201':
-          description: Modified
-    delete:
-      summary: Delete a specific spaceCraft
-      operationId: deleteSpaceCraftById
-      parameters:
-        - name: id
-          in: path
-          description: unique spaceCraft identification
-          required: true
-          schema:
-           type: integer
-           format: int64
-      responses:
-        '202':
-          description: Accepted
-  /naves/find:
-    get:
-      summary: List spaceCraft by filter
-      operationId: listSpaceCraftsByFilter
-      parameters:
-        - name: name
+        - name: date
           in: query
-          description: name spaceCraft
-          required: false
+          description: Fecha de inicio de la consulta
+          required: true
           schema:
-           type: string
+            type: string
+            format: date-time
+        - name: productId
+          in: query
+          description: Identificador del producto
+          required: true
+          schema:
+            type: integer
+            format: int64
+        - name: brandId
+          in: query
+          description: Identificador de la cadena
+          required: true
+          schema:
+            type: integer
+            format: int64
       responses:
         '200':
-          description: SpaceCrafts
+          description: Precios recuperados
           content:
-            application/json:    
+            application/json:
               schema:
-                $ref: "#/components/schemas/SpaceCraftCollectionRest"
+                $ref: "#/components/schemas/PricesRestCollection"
         default:
-          description: unexpected error
+          description: Error inesperado
           content:
             application/json:
               schema:
                 $ref: "#/components/schemas/Error"
 components:
   schemas:
-    SpaceCraftRest:
+    PricesRest:
       type: object
       required:
-        - id
-        - name
+        - productId
+        - brandId
+        - startDate
+        - endDate
+        - priceList
+        - price
       properties:
-        id:
+        productId:
           type: integer
           format: int64
-        name:
-          type: string  
-    SpaceCraftCollectionRest:
+        brandId:
+          type: integer
+          format: int64
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        priceList:
+          type: integer
+          format: int64
+        price:
+          type: number
+          format: double
+    PricesRestCollection:
       type: array
-      maxItems: 100
       items:
-        $ref: "#/components/schemas/SpaceCraftRest"
+        $ref: "#/components/schemas/PricesRest"
     Error:
       type: object
       required:
