@@ -25,6 +25,10 @@ public class Prices {
 
 	private String currency;
 
+	public Prices() {
+
+	}
+
 	public static Builder maker() {
 		return new Builder();
 	}
