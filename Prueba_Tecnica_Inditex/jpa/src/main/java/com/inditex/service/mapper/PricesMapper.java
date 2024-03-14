@@ -1,4 +1,4 @@
-package com.inditex.mapper;
+package com.inditex.service.mapper;
 
 import java.util.ArrayList;
 import java.util.Collection;

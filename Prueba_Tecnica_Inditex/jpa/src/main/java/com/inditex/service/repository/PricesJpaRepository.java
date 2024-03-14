@@ -7,9 +7,9 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Repository;
 
 import com.inditex.criteria.PricesCriteria;
-import com.inditex.mapper.PricesMapper;
 import com.inditex.service.Prices;
 import com.inditex.service.PricesEntity;
+import com.inditex.service.mapper.PricesMapper;
 import com.inditex.service.repository.base.BaseJpaRepository;
 import com.inditex.service.specification.PricesBetweenData;
 import com.inditex.service.specification.PricesByBrandId;

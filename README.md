@@ -1,6 +1,6 @@
 # Título del Proyecto
 
-Consulta de productos
+Consulta de productos de Inditex
 
 ### Pre-requisitos
 
