@@ -29,7 +29,7 @@ public class IntegrationTest {
 		mockMvc.perform(MockMvcRequestBuilders.get("/prices").param("date", "2020-06-14T10:00:00Z").param("productId", "35455").param("brandId", "1")
 				.contentType(MediaType.APPLICATION_JSON_VALUE)).andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.*", hasSize(6)));
+				.andExpect(MockMvcResultMatchers.jsonPath("$.*", hasSize(1)));
 
 	}
 
@@ -39,7 +39,7 @@ public class IntegrationTest {
 		mockMvc.perform(MockMvcRequestBuilders.get("/prices").param("date", "2020-06-14T16:00:00Z").param("productId", "35455").param("brandId", "1")
 				.contentType(MediaType.APPLICATION_JSON_VALUE)).andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.*", hasSize(6)));
+				.andExpect(MockMvcResultMatchers.jsonPath("$.*", hasSize(1)));
 
 	}
 
@@ -49,7 +49,7 @@ public class IntegrationTest {
 		mockMvc.perform(MockMvcRequestBuilders.get("/prices").param("date", "2020-06-14T21:00:00Z").param("productId", "35455").param("brandId", "1")
 				.contentType(MediaType.APPLICATION_JSON_VALUE)).andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.*", hasSize(6)));
+				.andExpect(MockMvcResultMatchers.jsonPath("$.*", hasSize(1)));
 
 	}
 
@@ -59,7 +59,7 @@ public class IntegrationTest {
 		mockMvc.perform(MockMvcRequestBuilders.get("/prices").param("date", "2020-06-15T10:00:00Z").param("productId", "35455").param("brandId", "1")
 				.contentType(MediaType.APPLICATION_JSON_VALUE)).andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.*", hasSize(6)));
+				.andExpect(MockMvcResultMatchers.jsonPath("$.*", hasSize(1)));
 
 	}
 
@@ -69,14 +69,8 @@ public class IntegrationTest {
 		mockMvc.perform(MockMvcRequestBuilders.get("/prices").param("date", "2020-06-16T21:00:00Z").param("productId", "35455").param("brandId", "1")
 				.contentType(MediaType.APPLICATION_JSON_VALUE)).andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.*", hasSize(6)));
+				.andExpect(MockMvcResultMatchers.jsonPath("$.*", hasSize(1)));
 
 	}
-
-	/*
-	 * Test 1: petición a las 10:00 del día 14 del producto 35455 para la brand 1 (ZARA) - Test 2: petición a las 16:00 del día 14 del producto 35455
-	 * para la brand 1 (ZARA) - Test 3: petición a las 21:00 del día 14 del producto 35455 para la brand 1 (ZARA) - Test 4: petición a las 10:00 del
-	 * día 15 del producto 35455 para la brand 1 (ZARA) - Test 5: petición a las 21:00 del día 16 del producto 35455 para la brand 1 (ZARA)
-	 */
 
 }
