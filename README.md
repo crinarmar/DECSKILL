@@ -1,4 +1,4 @@
-# Título del Proyecto
+# Prueba tecnica
 
 Consulta de productos de Inditex
 
@@ -13,7 +13,7 @@ Microservicio desarrollado con Spring-boot
 
 ## Ejecución de pruebas de integración
 
-Ejecutar en entorno de test /boot/src/test/java/com/dekra/service/IntegrationTest.java
+Ejecutar en entorno de test /boot/src/test/java/com/inditex/service/IntegrationTest.java
 
 ## Ejecución de pruebas end to end
 
@@ -27,6 +27,3 @@ Levantar el servicio (mvn spring-boot:run).
 * [Open-Api] 2.1.0
 * [JUnit] 5
 
-## Ejemplo url
-
-http://localhost:8080/prices?date=2020-06-16T21:00:00Z&productId=35455&brandId=1
