@@ -26,3 +26,7 @@ Levantar el servicio (mvn spring-boot:run).
 * [Maven] 3.9.5
 * [Open-Api] 2.1.0
 * [JUnit] 5
+
+## Ejemplo url
+
+http://localhost:8080/prices?date=2020-06-16T21:00:00Z&productId=35455&brandId=1
